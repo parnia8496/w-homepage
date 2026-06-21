@@ -15,13 +15,13 @@ body {
   font-family: "inter";
 }
 main {
-    flex: 1;
+  flex: 1;
 }
 header {
   display: flex;
   justify-content: space-between;
 }
-.left-card > img {
+.img > img {
   max-width: 100%;
   min-width: 375px;
 }
@@ -33,13 +33,13 @@ header {
 .ul {
   display: none;
 }
-h1 {
+.head > h1 {
   font-size: 5.6rem;
   /* width: 375px;
   height: 164px; */
   font-weight: 800;
 }
-.left-card > p {
+.pandbutt > p {
   margin-top: 10px;
   font-size: 1.5rem;
   /* height: 104px;
@@ -48,7 +48,7 @@ h1 {
   line-height: 1.5;
   letter-spacing: 0.5px;
 }
-.left-card > button {
+.pandbutt > button {
   margin-top: 30px;
   margin-bottom: 30px;
   background-color: #f15e50;
@@ -60,6 +60,9 @@ h1 {
   border: none;
   outline: none;
   font-weight: 700;
+}
+.pandbutt > button:hover {
+  background-color: blue;
 }
 .new {
   /* margin-top: 50px; */
@@ -172,19 +175,49 @@ h4 {
   main {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-areas: 
-    "left new" 
-    "footer footer"
-    ;
+    grid-template-areas:
+      "left new"
+      "footer footer";
     gap: 30px;
-}
-.left-card  {
+    align-content: start;
+  }
+  .left-card {
     grid-area: left;
-}
-.new {
+  }
+  .new {
     grid-area: new;
-}
-.footer {
+  }
+  .footer {
     grid-area: footer;
+  }
 }
+@media screen and (min-width: 985px) {
+  .left-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+    align-self: start;
+    grid-template-areas: 
+    "img img"
+    "head pandb"
+    
+    ;
+  }
+  .img {
+    grid-area: img;
+    width: 100%;
+  }
+  .head {
+    margin: 0;
+    grid-area: head;
+    grid-column: 1;
+  }
+  .pandbutt {
+    margin: 0;
+    grid-area: pandb;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
