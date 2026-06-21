@@ -87,6 +87,9 @@ h2 {
 .new a:hover {
   color: #e9ab53;
 }
+.ul li a:hover {
+    color: #e9ab53;
+}
 .new p {
   color: white;
   font-size: 1.5rem;
